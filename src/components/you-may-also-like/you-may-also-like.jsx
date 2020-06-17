@@ -2,7 +2,7 @@ import React from 'react'
 import './style.scss';
 import { Clothes } from '../clothes'
 
-export class Bestsellers extends React.Component {
+export class YouMayAlsoLike extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -32,7 +32,7 @@ export class Bestsellers extends React.Component {
     render() {
         return (
             <>
-                <h2>Bestsellers</h2>
+                <h2>YouMayAlsoLike</h2>
                 <div className="price">
                     {this.state.clothes.map((item, index) =>
                         <Clothes item={item} key={`${item.nameCity}-${index}`} />
