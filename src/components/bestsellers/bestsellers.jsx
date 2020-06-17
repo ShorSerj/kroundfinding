@@ -53,13 +53,3 @@ class Bestsellers extends React.Component {
         )
     }
 }
-
-const App = () => {
-    return (
-        <>
-            <Bestsellers />
-        </>
-    )
-}
-
-render(<App />, document.getElementById('root'))
