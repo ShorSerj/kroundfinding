@@ -1,8 +1,11 @@
 import React from 'react'
 import { render } from 'react-dom'
+import { Provider } from 'react-redux'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import { About, Catalog, Categoty, Contacts, Good, Main } from './pages'
+import { store } from './__data__'
+
 
 import "./styles/index.scss";
 
@@ -22,7 +25,11 @@ const App = () => {
 }
 
 render(
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>,
+    <Provider>
+        <BrowserRouter>
+            <App
+                store={store}
+            />
+        </BrowserRouter>
+    </Provider>,
     document.getElementById('root'))
