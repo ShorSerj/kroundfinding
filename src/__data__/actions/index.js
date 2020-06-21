@@ -1,1 +1,1 @@
-export { good } from './good'
+export { good,clear } from './good'
