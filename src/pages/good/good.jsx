@@ -5,6 +5,7 @@ import { YouMayAlsoLike, Header, Footer } from '../../components'
 import { actions } from '../../__data__'
 
 const mapStateToProps = (state) => {
+<<<<<<< HEAD
     // console.log('state', state)
     return { cart: state.good.cart, }
 }
@@ -34,6 +35,40 @@ class GoodComponent extends React.Component {
 
         const { cart } = this.props
         // console.log('cart---------------------', cart)
+=======
+
+    return { cart: state.good.cart, }
+
+}
+
+const mapDispatchToProps = (dispatch) => ({
+    goodAddToCart: (id, color, size) => dispatch(actions.good(id, color, size)),
+    goodClearCart: () => dispatch(actions.clear())
+})
+
+class GoodComponent extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {}
+    }
+
+
+    addToCart = (id) => {
+        let color = document.querySelector('input[name="color"]:checked').value;
+        let size = document.querySelector('input[name="size"]:checked').value;
+
+        this.props.goodAddToCart(id, color, size)
+    }
+
+    clearCart = () => {
+        this.props.goodClearCart()
+    }
+
+    render() {
+
+        const { cart } = this.props
+        console.log('cart--------', cart)
+>>>>>>> <home work>-<add good color and size>
 
         return (
             <>
@@ -45,10 +80,14 @@ class GoodComponent extends React.Component {
                         <ul className="good__properties">
                             <li>
                                 <div>Color</div>
+<<<<<<< HEAD
                                 <input type="checkbox" name="" id="" />
                                 <input type="checkbox" name="" id="" />
                                 <input type="checkbox" name="" id="" />
                                 {/* <label className="radio">
+=======
+                                <label className="radio">
+>>>>>>> <home work>-<add good color and size>
                                     <input type="radio" name="color" value='red' />
                                 </label>
                                 <label className="radio">
@@ -56,6 +95,7 @@ class GoodComponent extends React.Component {
                                 </label>
                                 <label className="radio">
                                     <input type="radio" name="color" value='green' />
+<<<<<<< HEAD
                                 </label> */}
                             </li>
                             <li>
@@ -66,6 +106,13 @@ class GoodComponent extends React.Component {
                                 <input type="checkbox" name="" id="" />
                                 <input type="checkbox" name="" id="" />
                                 {/* <label className="radio">
+=======
+                                </label>
+                            </li>
+                            <li>
+                                <div className="">Size</div>
+                                <label className="radio">
+>>>>>>> <home work>-<add good color and size>
                                     <input type="radio" name="size" value='XS' />
                                 </label>
                                 <label className="radio">
@@ -79,6 +126,7 @@ class GoodComponent extends React.Component {
                                 </label>
                                 <label className="radio">
                                     <input type="radio" name="size" value='XL' />
+<<<<<<< HEAD
                                 </label> */}
                             </li>
                         </ul>
@@ -96,6 +144,23 @@ class GoodComponent extends React.Component {
                         {/* <button
                             onClick={() => this.clearCart()}
                         >Clear cart</button> */}
+=======
+                                </label>
+                            </li>
+                        </ul>
+                        <div className="good__price">$ 160</div>
+                        <div className="">
+                            {
+                                cart.map((item) => item.name + " " + item.color + " " + item.size)
+                            }
+                        </div>
+                        <button
+                            onClick={() => this.addToCart(123)}
+                        >Add to cart</button>
+                        <button
+                            onClick={() => this.clearCart()}
+                        >Clear cart</button>
+>>>>>>> <home work>-<add good color and size>
                     </div>
                 </div>
 
@@ -108,4 +173,8 @@ class GoodComponent extends React.Component {
 }
 
 
+<<<<<<< HEAD
 export const Good = connect(mapStateToProps, mapDispatchToProps)(GoodComponent)
+=======
+export const Good = connect(mapStateToProps, mapDispatchToProps)(GoodComponent)
+>>>>>>> <home work>-<add good color and size>

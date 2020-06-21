@@ -3,7 +3,11 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
+<<<<<<< HEAD
 import { About, Catalog, Categoty, Contacts, Good, Main, Page404, Cart } from './pages'
+=======
+import { About, Catalog, Categoty, Contacts, Good, Main } from './pages'
+>>>>>>> <home work>-<add good color and size>
 import configStore from './__data__/store'
 
 const store = configStore()
@@ -14,8 +18,12 @@ const App = () => {
     return (
         <>
             <Switch>
+<<<<<<< HEAD
                 <Route exact path='/' component={Main} />
                 <Route path='/cart' component={Cart} />
+=======
+                <Route exact path='/' component={Good} />
+>>>>>>> <home work>-<add good color and size>
                 <Route path='/about' component={About} />
                 <Route exact path='/catalog' component={Good} />
                 <Route exact path='/catalog/category' component={Categoty} />
