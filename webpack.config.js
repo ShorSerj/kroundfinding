@@ -100,8 +100,15 @@ module.exports = {
     },
     optimization: optimization(),
     devServer: {
-        port: 4300,
-        hot: isDev
+        port: process.env.PORT || 4300,
+        hot: false,
+        historyApiFallback: true,
+
+        // contentBase: './target',
+        // overlay: true,
+        // noInfo: false,
+        // before: require('../stub')(STUB !== 'false'),
+        // stats: 'normal'
     },
     devtool: isDev ? 'source-map' : "",
     plugins: [

@@ -6,4 +6,4 @@ import * as constants from './constants'
 export { actions, reducers, selectors, constants }
 export * from './actions-types'
 
-export { default as store, createStore } from './store'
+export { default as store } from './store'

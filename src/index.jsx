@@ -4,8 +4,9 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import { About, Catalog, Categoty, Contacts, Good, Main } from './pages'
-import { store } from './__data__'
+import configureStore from './__data__/store'
 
+const store = configureStore()
 
 import "./styles/index.scss";
 
@@ -25,11 +26,9 @@ const App = () => {
 }
 
 render(
-    <Provider>
+    <Provider store={store}>
         <BrowserRouter>
-            <App
-                store={store}
-            />
+            <App />
         </BrowserRouter>
     </Provider>,
     document.getElementById('root'))

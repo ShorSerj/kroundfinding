@@ -1,0 +1,1 @@
+export { good } from './good'
