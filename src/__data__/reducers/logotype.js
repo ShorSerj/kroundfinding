@@ -1,19 +1,21 @@
 import { TYPES } from '../actions-types'
 
 const initialState = {
-  cart: [{ name: 'Нет товаров' }],
+  logo: [{ color: 'blck',
+           size: '16px' 
+        }],
 }
 
-export const good = (state = initialState, action) => {
+export const logo = (state = initialState, action) => {
   // console.log('reducer ==========', action)
   const newState = { ...state }
-  const cart = [{ name: `Товар id = ${action.id}` }]
+  const logotype = [{ color: `${action.logo}` }]
   switch (action.type) {
-    case TYPES.ADD_GOOD_TO_CART:
+    case TYPES.CONTEXT_LOGOTYPE:
       // console.log('reduer good', action)
       return {
         ...newState,
-        cart: cart
+        logotype: logotype
       }
     default:
       return state

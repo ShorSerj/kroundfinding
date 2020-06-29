@@ -4,9 +4,9 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import { About, Catalog, Categoty, Contacts, Good, Main } from './pages'
-import configStore from './__data__/store'
+import configureStore from './__data__/store'
 
-const store = configStore()
+const store = configureStore()
 
 import "./styles/index.scss";
 

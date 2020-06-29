@@ -4,6 +4,6 @@ import { good } from './good'
 import { catalog } from './catalog'
 
 export default combineReducers({
-    good: good,
-    catalog: catalog,
+  good: good,
+  catalog: catalog,
 })

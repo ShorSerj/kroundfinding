@@ -1,1 +1,2 @@
-export { good,clear } from './good'
+export { good } from './good'
+export { logotype } from './logotype'

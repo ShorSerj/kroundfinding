@@ -1,9 +1,51 @@
 @import '../../styles/variables.scss';
 
-.mainWhite {
-  background-color: $main-white;
-} 
+.header {
+  background-color: $basic-white;
+  height: 67px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 
-.mainBlack {
-  color: $main-black;
+  &__logo {
+    display: grid;
+    align-content: center;
+    text-align: center;
+
+    a {
+      color: $basic-black;
+      font-size: 24px;
+      font-weight: bolder;
+      text-decoration: none;
+    }
+  }
+
+  &__addlinks {
+    display: grid;
+    grid-auto-flow: column;
+    align-content: center;
+    justify-content: flex-end;
+    padding-right: 35px;
+
+    &_search {
+      background: url(/img/search.svg) no-repeat;
+      width: 20px;
+      height: 20px;
+      margin-right: 20px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &_cart {
+      background: url(/img/cart.svg) no-repeat;
+      width: 23px;
+      height: 20px; 
+      
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
 }

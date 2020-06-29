@@ -1,16 +1,17 @@
 import {
   createStore,
-  applyMiddleware,
-  compose
+  applyMiddleware
 } from 'redux'
 import logger from 'redux-logger'
 import thunkMiddleware from 'redux-thunk'
 
-import rootReduce from './reducers'
+import rootReducer from './reducers'
 
-export default function configureStore(initiaState) {
+export default function configureStore(initialState) {
   const store = createStore(
-    rootReduce,
-    applyMiddleware(thunkMiddleware, logger))
+    rootReducer,
+    initialState,
+    applyMiddleware(thunkMiddleware, logger)
+  )
   return store
 }

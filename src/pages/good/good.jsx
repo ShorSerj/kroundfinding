@@ -5,38 +5,29 @@ import { YouMayAlsoLike, Header, Footer } from '../../components'
 import { actions } from '../../__data__'
 
 const mapStateToProps = (state) => {
-
+    // console.log('state', state)
     return { cart: state.good.cart, }
 
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    goodAddToCart: (id, color, size) => dispatch(actions.good(id, color, size)),
-    goodClearCart: () => dispatch(actions.clear())
+    goodAddToCart: (id) => dispatch(actions.good(id))
 })
-
 class GoodComponent extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
     }
 
-
     addToCart = (id) => {
-        let color = document.querySelector('input[name="color"]:checked').value;
-        let size = document.querySelector('input[name="size"]:checked').value;
-
-        this.props.goodAddToCart(id, color, size)
-    }
-
-    clearCart = () => {
-        this.props.goodClearCart()
+        // console.log('товар id ', id)
+        this.props.goodAddToCart(id)
     }
 
     render() {
 
         const { cart } = this.props
-        console.log('cart--------', cart)
+        // console.log('cart---------------------', cart)
 
         return (
             <>
@@ -78,17 +69,16 @@ class GoodComponent extends React.Component {
                             </li>
                         </ul>
                         <div className="good__price">$ 160</div>
-                        <div className="">
+                        <div>
                             {
-                                cart.map((item) => item.name + " " + item.color + " " + item.size)
+                                cart.map((item) => item.name)
                             }
                         </div>
                         <button
-                            onClick={() => this.addToCart(123)}
-                        >Add to cart</button>
-                        <button
-                            onClick={() => this.clearCart()}
-                        >Clear cart</button>
+                            onClick={() => this.addToCart(12121)}
+                        >
+                            Add to cart
+                        </button>
                     </div>
                 </div>
                 <YouMayAlsoLike />
@@ -98,6 +88,5 @@ class GoodComponent extends React.Component {
 
     }
 }
-
 
 export const Good = connect(mapStateToProps, mapDispatchToProps)(GoodComponent)
