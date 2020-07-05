@@ -6,7 +6,6 @@ import { Menu, Logo } from '../'
 import style from './style.scss'
 
 export const Header = (props) => {
-
   return (<div className="header">
     <Menu />
     <div className="header__logo">
@@ -19,7 +18,10 @@ export const Header = (props) => {
       <div className="header__addlinks_search">
         {/* <input type="text" /> */}
       </div>
-      <div className="header__addlinks_cart"></div>
+      {/* <div 
+        onClick={() => this.addToCart(12121)}>
+      </div> */}
+      <Link className="header__addlinks_cart" to='/cart'></Link>
     </div>
   </div>)
 }

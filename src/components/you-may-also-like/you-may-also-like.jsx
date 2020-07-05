@@ -37,6 +37,7 @@ export class YouMayAlsoLike extends React.Component {
                     {this.state.clothes.map((item, index) =>
                         <Clothes item={item} key={`${item.nameCity}-${index}`} />
                     )}
+                    
                 </div>
                 <span className='view'>View all</span>
             </>

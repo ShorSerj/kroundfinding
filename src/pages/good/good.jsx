@@ -5,8 +5,8 @@ import { YouMayAlsoLike, Header, Footer } from '../../components'
 import { actions } from '../../__data__'
 
 const mapStateToProps = (state) => {
+    // console.log('state', state)
     return { cart: state.good.cart, }
-
 }
 
 const mapDispatchToProps = (dispatch) => ({
@@ -31,11 +31,10 @@ class GoodComponent extends React.Component {
     clearCart = () => {
         this.props.goodClearCart()
     }
-
     render() {
 
         const { cart } = this.props
-        console.log('cart--------', cart)
+        // console.log('cart---------------------', cart)
 
         return (
             <>
@@ -47,7 +46,10 @@ class GoodComponent extends React.Component {
                         <ul className="good__properties">
                             <li>
                                 <div>Color</div>
-                                <label className="radio">
+                                <input type="checkbox" name="" id="" />
+                                <input type="checkbox" name="" id="" />
+                                <input type="checkbox" name="" id="" />
+                                {/* <label className="radio">
                                     <input type="radio" name="color" value='red' />
                                 </label>
                                 <label className="radio">
@@ -55,11 +57,16 @@ class GoodComponent extends React.Component {
                                 </label>
                                 <label className="radio">
                                     <input type="radio" name="color" value='green' />
-                                </label>
+                                </label> */}
                             </li>
                             <li>
                                 <div className="">Size</div>
-                                <label className="radio">
+                                <input type="checkbox" name="" id="" />
+                                <input type="checkbox" name="" id="" />
+                                <input type="checkbox" name="" id="" />
+                                <input type="checkbox" name="" id="" />
+                                <input type="checkbox" name="" id="" />
+                                {/* <label className="radio">
                                     <input type="radio" name="size" value='XS' />
                                 </label>
                                 <label className="radio">
@@ -73,23 +80,26 @@ class GoodComponent extends React.Component {
                                 </label>
                                 <label className="radio">
                                     <input type="radio" name="size" value='XL' />
-                                </label>
+                                </label> */}
                             </li>
                         </ul>
                         <div className="good__price">$ 160</div>
-                        <div className="">
+                        {/* <div className="">
                             {
-                                cart.map((item) => item.name + " " + item.color + " " + item.size)
+                                cart.map((item) => item.id + " " + item.name + " " + item.color + " " + item.size)
                             }
-                        </div>
-                        <button
-                            onClick={() => this.addToCart(123)}
-                        >Add to cart</button>
-                        <button
+                        </div> */}
+                        {/* <button
+                            onClick={() => this.addToCart(12121)}
+                        >
+                            Add to cart
+                        </button> */}
+                        {/* <button
                             onClick={() => this.clearCart()}
-                        >Clear cart</button>
+                        >Clear cart</button> */}
                     </div>
                 </div>
+
                 <YouMayAlsoLike />
                 <Footer />
             </>
