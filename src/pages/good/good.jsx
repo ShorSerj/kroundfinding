@@ -5,12 +5,11 @@ import { YouMayAlsoLike, Header, Footer } from '../../components'
 import { actions } from '../../__data__'
 
 const mapStateToProps = (state) => {
-    console.log('state', state)
     return { cart: state.good.cart, }
+
 }
 
 const mapDispatchToProps = (dispatch) => ({
-
     goodAddToCart: (id, color, size) => dispatch(actions.good(id, color, size)),
     goodClearCart: () => dispatch(actions.clear())
 })
@@ -20,6 +19,7 @@ class GoodComponent extends React.Component {
         super(props)
         this.state = {}
     }
+
 
     addToCart = (id) => {
         let color = document.querySelector('input[name="color"]:checked').value;
@@ -35,6 +35,7 @@ class GoodComponent extends React.Component {
     render() {
 
         const { cart } = this.props
+        console.log('cart--------', cart)
 
         return (
             <>
@@ -76,7 +77,6 @@ class GoodComponent extends React.Component {
                             </li>
                         </ul>
                         <div className="good__price">$ 160</div>
-
                         <div className="">
                             {
                                 cart.map((item) => item.name + " " + item.color + " " + item.size)
@@ -97,5 +97,6 @@ class GoodComponent extends React.Component {
 
     }
 }
+
 
 export const Good = connect(mapStateToProps, mapDispatchToProps)(GoodComponent)
