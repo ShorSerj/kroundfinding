@@ -24,7 +24,6 @@ class GoodComponent extends React.Component {
     addToCart = (id) => {
         let color = document.querySelector('input[name="color"]:checked').value;
         let size = document.querySelector('input[name="size"]:checked').value;
-
         this.props.goodAddToCart(id, color, size)
     }
 

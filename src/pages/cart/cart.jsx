@@ -28,7 +28,7 @@ class GoodComponent extends React.Component {
     render() {
         const { cart } = this.props
 
-        console.log('cart', cart)
+        console.log('cart', this.props)
         return (
             <>
                 <Header />

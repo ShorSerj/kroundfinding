@@ -37,7 +37,8 @@ class ClothesCart extends React.Component {
                 <img src={item.img} />
                 <span className="name">{item.name}</span>
                 <span className="cost">{'$ ' + item.cost}</span>
-                <button onClick={() => this.addToCart(item.id, item.name, item.cost, item.size, item.color)}>Add to cart</button>
+                <button onClick={() => this.addToCart(item.id, item.name, item.cost, item.size, item.color)
+                }>Add to cart</button>
             </div>
         )
     }
