@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Menu } from '../menu'
+import { Menu, Logo } from '../'
 
 import style from './style.scss'
 
@@ -10,7 +10,10 @@ export const Header = (props) => {
   return (<div className="header">
     <Menu />
     <div className="header__logo">
-      <a href="#">ВелоСпортАс</a>
+      <Logo
+        color="black"
+        size={18}
+      />
     </div>
     <div className="header__addlinks">
       <div className="header__addlinks_search">
