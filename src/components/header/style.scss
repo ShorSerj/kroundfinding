@@ -5,6 +5,15 @@
   height: 67px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  @media screen and (max-width: $table-width) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 
   &__logo {
     display: grid;
@@ -12,8 +21,8 @@
     text-align: center;
 
     a {
-      color: $basic-black;
-      font-size: 24px;
+      // color: $basic-black;
+      // font-size: 24px;
       font-weight: bolder;
       text-decoration: none;
     }

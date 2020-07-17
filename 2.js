@@ -1,0 +1,7 @@
+
+this.setState({
+   data: wqe, () => {
+        
+   }
+})
+

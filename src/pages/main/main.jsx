@@ -9,7 +9,7 @@ export const Main = (props) => {
 
   return (
     <>
-      <Header />
+      <Header/>
       <Breadcrumbs />
       <Bestsellers />
       <Footer />
