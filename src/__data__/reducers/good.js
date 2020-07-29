@@ -1,19 +1,45 @@
 import { TYPES } from '../actions-types'
 
+
 const initialState = {
-  cart: [{ name: 'Нет товаров' }],
+  cart: [],
 }
 
 export const good = (state = initialState, action) => {
-  // console.log('reducer ==========', action)
-  const newState = { ...state }
-  const cart = [{ name: `Товар id = ${action.id}` }]
+  const addedGoods = state.cart || []
+
+  const newGood = {
+    name: action.name,
+    id: action.id,
+    cost: action.cost,
+    color: action.color,
+    size: action.size,
+    count: 0
+  }
+  const isGoods = addedGoods.filter((item) => item.id === action.id)
+  if (!isGoods.length) {
+    addedGoods.push(newGood)
+  }
+
+  addedGoods.map((item, index) => {
+    if (item.id === undefined) {
+      addedGoods.splice(index, 1)
+    }
+    console.log('item', item)
+    if (item.id === action.id) {
+      item.count++
+    }
+  })
+
   switch (action.type) {
     case TYPES.ADD_GOOD_TO_CART:
-      // console.log('reduer good', action)
       return {
-        ...newState,
-        cart: cart
+        ...state,
+        cart: [...addedGoods]
+      }
+    case TYPES.CLEAR_CART:
+      return {
+        cart: initialState.cart
       }
     default:
       return state

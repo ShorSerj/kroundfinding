@@ -5,37 +5,23 @@
   height: 67px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
 
-  &__logo {
-    display: grid;
-    align-content: center;
-    text-align: center;
-
-    a {
-      color: $basic-black;
-      font-size: 24px;
-      font-weight: bolder;
-      text-decoration: none;
-    }
+  @media screen and (max-width: $table-width) {
+    padding-left: 16px;
+    padding-right: 16px;
+    grid-template-columns: 1fr;
   }
-
+  
   &__addlinks {
     display: grid;
     grid-auto-flow: column;
     align-content: center;
     justify-content: flex-end;
     padding-right: 35px;
-
-    &_search {
-      background: url(/img/search.svg) no-repeat;
-      width: 20px;
-      height: 20px;
-      margin-right: 20px;
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
 
     &_cart {
       background: url(/img/cart.svg) no-repeat;
@@ -45,6 +31,21 @@
       &:hover {
         cursor: pointer;
       }
+    }
+  }
+
+  &__logo {
+    display: grid;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  &__menu {
+    @media screen and (max-width: $table-width) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
     }
   }
 

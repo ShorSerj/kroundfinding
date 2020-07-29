@@ -1,0 +1,24 @@
+@import '../../styles/variables.scss';
+
+.logo {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 800;
+  display: grid;
+  align-content: center;
+  text-align: center;
+
+  &__black {
+    color: $basic-black;
+  }
+  
+  &__white {
+    color: $basic-white;
+  }
+
+  a {
+    font-weight: bolder;
+    text-decoration: none;
+  }  
+}
+

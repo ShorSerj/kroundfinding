@@ -1,19 +1,29 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import "./style.scss";
 
 export const Logo = (props) => {
-    { console.log(props) }
-    return (
+    const url = window.location.pathname
 
-        <div className="header__logo">
-            <a href="#">ВелоСпортАс</a>
+    return (
+        <div className="logo">
+            {
+                url === '/'
+                    ? <span className={`logo__${props.color}`}>ВелоСпортАс</span>
+                    : <a className={`logo__${props.color}`} href="/">ВелоСпортАс</a>
+            }
         </div>
     )
-    // <div >
-    //     <span>{props.item.nameCity}</span>
-    //     <span> : </span>
-    //     <span>{props.item.temperature}</span>
-    //     <button onClick={() => { this.handleClick(props.item.nameCity) }}>like</button>
-    // </div>)
 }
+
+Logo.propTypes = {
+    color: PropTypes.string,
+    size: PropTypes.number
+}
+
+Logo.defaultProps = {
+    color: 'black',
+    size: '18'
+};
