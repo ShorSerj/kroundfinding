@@ -27,7 +27,7 @@ export const good = (state = initialState, action) => {
     if (item.id === undefined) {
       addedGoods.splice(index, 1)
     }
-    console.log('item', item)
+
     if (item.id === action.id) {
       item.count++
     }
