@@ -6,7 +6,6 @@ import "./style.scss";
 
 export const Logo = (props) => {
     const url = window.location.pathname
-    console.log('props', props)
 
     return (
         <div className="logo">
@@ -21,10 +20,10 @@ export const Logo = (props) => {
 
 Logo.propTypes = {
     color: PropTypes.string,
-    size: PropTypes.string
+    size: PropTypes.number
 }
 
 Logo.defaultProps = {
     color: 'black',
     size: '18'
-  };
+};

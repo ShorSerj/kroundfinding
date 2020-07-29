@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Menu } from '../menu'
 import { Logo } from '../logo'
 
 import style from './style.scss'
@@ -10,7 +9,8 @@ export const Footer = (props) => {
 
     return (<div className="footer">
         <Logo
-            color="#ffffff" size="22"
+            color="white"
+            size={22}
         />
         <ul className="footer__nav">
             <li><a href="#" className="footer__nav_link">Каталог</a></li>
