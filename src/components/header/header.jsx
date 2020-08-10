@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import { Menu, Logo, SearchBar } from '../'
 
@@ -16,7 +17,7 @@ export const Header = (props) => {
       />
     </div>
     <div className="header__addlinks">
-      <SearchBar />
+      {/* <SearchBar /> */}
       <Link className="header__addlinks_cart" to='/cart'></Link>
     </div>
   </div>)
