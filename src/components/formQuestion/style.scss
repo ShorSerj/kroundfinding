@@ -1,0 +1,21 @@
+input {
+    width: 80%;
+    min-height: 4vh;
+}
+
+#usersAsk {
+    min-height: 10vh;
+}
+
+.question__import {
+    padding-top: 15px;
+}
+
+button {
+    min-height: 4vh;
+    background-color: black;
+    color: white;
+    width: 15vh;
+    border-radius: 15px;
+    margin: 5% 0% 0 50%;
+}

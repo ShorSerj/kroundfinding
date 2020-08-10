@@ -12,7 +12,7 @@ export const Main = (props) => {
       <Header />
       {/* <Breadcrumbs /> */}
       <main>
-        <SliderRange />
+        {/* <SliderRange /> */}
       </main>
       <Footer />
     </>
