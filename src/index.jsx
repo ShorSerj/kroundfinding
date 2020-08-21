@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import { About, Catalog, Categoty, Contacts, Good, Main, Page404, Cart } from './pages'
+import { About, Catalog, Categoty, Contacts, Good, Main, Page404, Cart, Product } from './pages'
 import configStore from './__data__/store'
 
 const store = configStore()
@@ -29,6 +29,7 @@ const App = () => {
                 <Route exact path='/catalog/category' component={Categoty} />
                 <Route path='/catalog/category/good' component={Good} />
                 <Route path='/contacts' component={Contacts} />
+                <Route path='/product' component={Product} />
                 <Route component={Page404} />
             </Switch>
         </>
