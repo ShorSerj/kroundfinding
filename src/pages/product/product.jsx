@@ -1,12 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Header, Footer } from '../../components'
+import { Header, Footer, YouMayAlsoLike, ProductSlider } from '../../components'
 import { actions } from '../../__data__'
 
 
 import './style.scss';
-
 const mapStateToProps = (state) => {
 
 }
@@ -27,12 +26,14 @@ class ProductComponent extends React.Component {
                 <Header />
                 <main>
                     <div className="product-card">
-                        <div className="product-card__slider">
-                            <div className="product-card__slider-image">
-                                <img src="/img/product.png" alt="" />
-                            </div>
-                        </div>
-
+                        <ProductSlider>
+                            <img src="/img/product.png" alt="" />
+                            <img src="/img/image 1.png" alt="" />
+                            <img src="/img/image 9.png" alt="" />
+                            <img src="/img/image 11.png" alt="" />
+                            <img src="/img/image 14.png" alt="" />
+                        </ProductSlider>
+                        
                         <div className="product-card__description">
                             <h1>Cyberbike Cruiser</h1>
                             <p>
@@ -53,8 +54,9 @@ class ProductComponent extends React.Component {
                                 <button type="submit">В список желаний</button>
                             </form>
                         </div>
-                    </div>
-                </main>
+                    </div >
+                </main >
+                <YouMayAlsoLike />
                 <Footer />
             </>
         )
