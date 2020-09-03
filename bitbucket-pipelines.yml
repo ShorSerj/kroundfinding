@@ -18,4 +18,5 @@ pipelines:
       - step:
           deployment: production
           script:
+            - git config --global http.sslVerify false
             - lftp -d -e "mirror --reverse . $FTP_TARGET_PATH" -p $FTP_PORT -u $FTP_USERNAME,$FTP_PASSWORD $FTP_TARGET_SITE
