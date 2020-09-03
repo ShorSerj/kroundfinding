@@ -10,8 +10,7 @@ pipelines:
           - npm install
           - npm run-script build
           - mkdir packaged
-          - cd ./packaged
-          - tar -czvf package-${BITBUCKET_BUILD_NUMBER}.tar.gz -C build ./
+          - tar -czvf packaged/package-${BITBUCKET_BUILD_NUMBER}.tar.gz -C dist .
         artifacts:
           - packaged/**
     # - step:
