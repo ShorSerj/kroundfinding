@@ -7,7 +7,7 @@ export class YouMayAlsoLike extends React.Component {
         super(props);
         this.state = {
             clothes: [{
-                img: "./img/Rectangle.png",
+                img: "./img/image 4.png",
                 id: 123,
                 name: 'Jacket',
                 cost: 120,
@@ -15,7 +15,7 @@ export class YouMayAlsoLike extends React.Component {
                 color: 'red',
             },
             {
-                img: "./img/Rectangle 3.png",
+                img: "./img/image 5.png",
                 id: 112323,
                 name: 'Overalls',
                 cost: 140,
@@ -23,7 +23,7 @@ export class YouMayAlsoLike extends React.Component {
                 color: 'black',
             },
             {
-                img: "./img/Rectangle 3.1.png",
+                img: "./img/image 22.png",
                 id: 2443,
                 name: 'Jacket',
                 cost: 90,
@@ -31,7 +31,7 @@ export class YouMayAlsoLike extends React.Component {
                 color: 'green',
             },
             {
-                img: "./img/Rectangle 3.3.png",
+                img: "./img/image 23.png",
                 id: 4533,
                 name: 'Overalls',
                 cost: 160,
@@ -43,16 +43,18 @@ export class YouMayAlsoLike extends React.Component {
 
     render() {
         return (
-            <>
-                <h2>YouMayAlsoLike</h2>
-                <div className="price">
+            <div className="youMayAlsoLike">
+                <div className="youMayAlsoLike-title">
+                    <h2>Вам также может понравиться</h2>
+                    <a className='view-all'>Смотреть все</a>
+                </div>
+                <div className="other-products">
                     {this.state.clothes.map((item, index) =>
                         <Clothes item={item} key={`${item.nameCity}-${index}`} />
                     )}
-                    
                 </div>
-                <span className='view'>View all</span>
-            </>
+
+            </div>
         )
     }
 }

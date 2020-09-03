@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Header, Footer, Breadcrumbs, SliderRange } from '../../components'
+import { Header, Footer, Breadcrumbs, SliderRange, BusinessCard } from '../../components'
 
 import style from './style.scss'
 
@@ -12,7 +12,8 @@ export const Main = (props) => {
       <Header />
       {/* <Breadcrumbs /> */}
       <main>
-        <SliderRange />
+        {/* <SliderRange /> */}
+        <BusinessCard />
       </main>
       <Footer />
     </>

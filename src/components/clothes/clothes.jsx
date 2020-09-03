@@ -33,12 +33,17 @@ class ClothesCart extends React.Component {
     render() {
         const { item } = this.props
         return (
-            <div>
-                <img src={item.img} />
+            <div className="product-container">
+                <div className="product-container-image">
+                    <img src={item.img} />
+                    <div className="product-add">
+                        <button>+</button>
+                    </div>
+                </div>
                 <span className="name">{item.name}</span>
                 <span className="cost">{'$ ' + item.cost}</span>
-                <button onClick={() => this.addToCart(item.id, item.name, item.cost, item.size, item.color)
-                }>Add to cart</button>
+                {/* <button onClick={() => this.addToCart(item.id, item.name, item.cost, item.size, item.color)
+                }>Add to cart</button> */}
             </div>
         )
     }
