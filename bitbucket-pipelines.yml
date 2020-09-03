@@ -11,14 +11,12 @@
 #FTP_TARGET_SITE: (Required) URL of the remote server, including the protocol. Example: ftp://127.0.0.1
 
 
-image: cschlosser/alpine-lftps
+image: samueldebruyn/debian-git
 pipelines:
   branches:
     master:
       - step:
-          deployment: production
+          name: push to ftp server
+          deployment: staging
           script:
             - apt-get update
-            - apt-get -qq install git
-            - git config --global http.sslVerify false
-            - lftp -d -e "mirror --reverse . $FTP_TARGET_PATH" -p $FTP_PORT -u $FTP_USERNAME,$FTP_PASSWORD $FTP_TARGET_SITE
