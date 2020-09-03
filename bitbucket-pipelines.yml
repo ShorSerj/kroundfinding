@@ -21,4 +21,4 @@ pipelines:
           script:
             - apt-get update
             - apt-get -qq install git-ftp
-            - git ftp init --user $FTP_USERNAME --password $FTP_PASSOWRD ftp://ftp.velosportas.ru
+            - git ftp init --user $FTP_USERNAME --password $FTP_PASSOWRD ftp://$FTP_HOST
