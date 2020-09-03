@@ -33,12 +33,12 @@ const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
 
 const cssLoaders = extra => {
     const loaders = [{
-        loader: MiniCssExtractPlugin.loader,
-        options: {
-            hmr: isDev,
-            reloadAll: true
-        }
-    },
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+                hmr: isDev,
+                reloadAll: true
+            }
+        },
         "css-loader"
     ]
 
@@ -132,54 +132,54 @@ module.exports = {
     ],
     module: {
         rules: [{
-            test: /\.css$/,
-            use: cssLoaders()
-        },
-        {
-            test: /\.less$/,
-            use: cssLoaders("less-loader")
-        },
-        {
-            test: /\.s[ac]ss$/,
-            use: cssLoaders("sass-loader")
-        },
-        {
-            test: /\.(png|jpg|svg|gif)$/,
-            use: ["file-loader"]
-        },
-        {
-            test: /\.(ttf|woff|woff2|eot)$/,
-            use: ["file-loader"]
-        },
-        {
-            test: /\.xml$/,
-            use: ["xml-loader"]
-        },
-        {
-            test: /\.csv$/,
-            use: ["csv-loader"]
-        },
-        {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use: jsLoader()
-        },
-        {
-            test: /\.ts$/,
-            exclude: /node_modules/,
-            loader: {
-                loader: "babel-loader",
-                options: babelOptions('@babel/preset-typescript')
+                test: /\.css$/,
+                use: cssLoaders()
+            },
+            {
+                test: /\.less$/,
+                use: cssLoaders("less-loader")
+            },
+            {
+                test: /\.s[ac]ss$/,
+                use: cssLoaders("sass-loader")
+            },
+            {
+                test: /\.(png|jpg|svg|gif)$/,
+                use: ["file-loader"]
+            },
+            {
+                test: /\.(ttf|woff|woff2|eot)$/,
+                use: ["file-loader"]
+            },
+            {
+                test: /\.xml$/,
+                use: ["xml-loader"]
+            },
+            {
+                test: /\.csv$/,
+                use: ["csv-loader"]
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: jsLoader()
+            },
+            {
+                test: /\.ts$/,
+                exclude: /node_modules/,
+                loader: {
+                    loader: "babel-loader",
+                    options: babelOptions('@babel/preset-typescript')
+                }
+            },
+            {
+                test: /\.jsx$/,
+                exclude: /node_modules/,
+                loader: {
+                    loader: "babel-loader",
+                    options: babelOptions('@babel/preset-react')
+                }
             }
-        },
-        {
-            test: /\.jsx$/,
-            exclude: /node_modules/,
-            loader: {
-                loader: "babel-loader",
-                options: babelOptions('@babel/preset-react')
-            }
-        }
         ]
     }
 

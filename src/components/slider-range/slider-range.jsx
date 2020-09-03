@@ -10,18 +10,21 @@ export class SliderRange extends React.Component {
             min: 10,
             max: 200,
             valueCurrent: 50,
-            steps: 1,
+            step: 1,
             valueLeft: 0,
             valueRight: 200,
         }
         this.sliderRangeInput = React.createRef()
         this.sliderRangeSpan = React.createRef()
     }
+    componentDidMount() {
+        console.log('sliderRangeInput.current', this.sliderRangeInput.current.value)
+    }
 
     handleInput = () => {
         const sliderRangeInput = this.sliderRangeInput.current.value
         const sliderRangeSpan = this.sliderRangeSpan.current
-
+        // console.log('sliderRangeInput', sliderRangeInput)
         this.setState({ valueCurrent: sliderRangeInput })
 
         sliderRangeSpan.textContent = sliderRangeInput
@@ -35,7 +38,7 @@ export class SliderRange extends React.Component {
     }
 
     render() {
-        const { min, max, valueCurrent, steps, valueLeft, valueRight } = this.state
+        const { min, max, valueCurrent, step, valueLeft, valueRight } = this.state
 
 
         return (
@@ -55,7 +58,7 @@ export class SliderRange extends React.Component {
                             min={min}
                             max={max}
                             value={valueCurrent}
-                            steps={steps}
+                            step={step}
                         />
                         <div className="value right">{valueRight}</div>
                     </div>

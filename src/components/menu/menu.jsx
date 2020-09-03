@@ -34,7 +34,7 @@ export class Menu extends React.Component {
                         aria-controls="menu__list"
                         onClick={this.handleClickMenu}
                     >
-                        <svg className="menu__icon" aria-hidden="false" width="32" height="32">
+                        <svg className="menu__icon" ria-hiddean="false" width="32" height="32">
                             <use className="menu__icon-menu" href="/src/assets/images/sprite.svg#menu"></use>
                             <use className="menu__icon-cross" href="/src/assets/images/sprite.svg#cross"></use>
                         </svg>

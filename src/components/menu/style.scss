@@ -48,8 +48,8 @@
   }  
   
   &__icon {
-    @media screen and (max-width: $table-width) {
-      stroke: $basic-black;
+    @media screen and (max-width: $table-width) { //задается ширина при которой вылезает меню
+      stroke: $basic-black; //цвет линий миню
     }
 
     &:hover {

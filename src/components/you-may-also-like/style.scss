@@ -1,22 +1,34 @@
+.youMayAlsoLike {
+    margin: 40px 0;
 
+    .youMayAlsoLike-title {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
 
     h2 {
         font-style: normal;
         font-weight: bold;
-        font-size: 26px;
-        line-height: 30px;
-        display: flex;
-        align-items: center;
-        margin: 57px 142px 0 34px;
+        font-size: 32px;
+        line-height: 38px;
         color: #151C22;
     }
 
-    .price {
+    .view-all {
+        text-align: center;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        border-bottom: solid 1px black;
+
+    }
+
+    .other-products {
         margin-top: 37px;
         display: grid;
-        grid-template-columns: 0fr 0fr;
+        grid-template-columns: repeat(4, 270px);
         justify-content: space-around;
-        grid-row-gap: 27px;
 
         .name {
             font-weight: 500;
@@ -34,22 +46,4 @@
             margin-top: 4px;
         }
     }
-
-    .view {
-        display: block;
-        margin: 35px 0 67px 0;
-        text-align: center;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 19px;
-        position: relative;
-
-        &:after {
-            content: "";
-            position: absolute;
-            top: 18px;
-            left: 125px;
-            border-bottom: 2px solid #151C22;
-            width: 70px;
-        }
-    }
+}
