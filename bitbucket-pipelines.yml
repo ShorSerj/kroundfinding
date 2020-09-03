@@ -11,7 +11,7 @@ pipelines:
           - npm run-script build
           - mkdir packaged
           - cd ./packaged
-          #- tar -czvf packaged/package-${BITBUCKET_BUILD_NUMBER}.tar.gz -C build .
+          - tar -czvf package-${BITBUCKET_BUILD_NUMBER}.tar.gz -C build ./
         artifacts:
           - packaged/**
     # - step:
