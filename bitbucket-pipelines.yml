@@ -7,9 +7,16 @@ image: node:10.15.3
 
 pipelines:
   default:
-    - step:
-        caches:
-          - node
-        script: # Modify the commands below to build your repository.
-          - npm install
-          - npm test
+    tags:
+      ftp-upload_*:
+        - step:
+          name: push to ftp server
+          development: staging
+#        caches:
+#          - node
+        script:
+          # - npm install
+          # - npm test
+          - apt-get update
+          - apt-get -qq install git-ftp
+          - git ftp push --user $FTP_USERNAME --password $FTP_PASSWORD ftp://$FTP_HOST
