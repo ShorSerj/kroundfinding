@@ -12,11 +12,11 @@ pipelines:
         - step:
           name: push to ftp server
           development: staging
-#         caches:
-#           - node
+          caches:
+            - node
           script:
-            # - npm install
-            # - npm test
-            - apt-get update
-            - apt-get -qq install git-ftp
-            - git ftp push --user $FTP_USERNAME --password $FTP_PASSWORD ftp://$FTP_HOST
+            - npm install
+            - npm test
+            # - apt-get update
+            # - apt-get -qq install git-ftp
+            # - git ftp push --user $FTP_USERNAME --password $FTP_PASSWORD ftp://$FTP_HOST
