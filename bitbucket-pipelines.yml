@@ -3,20 +3,19 @@
 # Only use spaces to indent your .yml configuration.
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
-image: node:10.15.3
 
+#FTP_TARGET_PATH: (Required) Path on the remote server to place the files. Example: \
+#FTP_PORT: (Required) The FTP port on the target server. Example: 21
+#FTP_USERNAME: (Required) The username for authentication on the target server. Example: anonymous
+#FTP_PASSWORD: (Required) The password for authentication on the target server. Pro-tip: use the lock symbol to encrypt and mask the password.
+#FTP_TARGET_SITE: (Required) URL of the remote server, including the protocol. Example: ftp://127.0.0.1
+
+
+image: cschlosser/alpine-lftps
 pipelines:
-  default:
-    tags:
-      ftp-upload_*:
-        - step:
-          name: push to ftp server
-          development: staging
-          caches:
-            - node
+  branches:
+    master:
+      - step:
+          deployment: production
           script:
-            - npm install
-            - npm test
-            # - apt-get update
-            # - apt-get -qq install git-ftp
-            # - git ftp push --user $FTP_USERNAME --password $FTP_PASSWORD ftp://$FTP_HOST
+            - lftp -d -e "mirror --reverse . $FTP_TARGET_PATH" -p $FTP_PORT -u $FTP_USERNAME,$FTP_PASSWORD $FTP_TARGET_SITE
