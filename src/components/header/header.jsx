@@ -30,3 +30,10 @@ Header.propTypes = {
 Header.defaultProps = {
 
 }
+const mapStateToProps = (state) => {
+
+}
+const mapDispatchToProps = (dispatch) => { 
+
+}
+export const Logotype = connect(mapStateToProps, mapDispatchToProps)(Logo)
