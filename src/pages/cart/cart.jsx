@@ -36,24 +36,26 @@ class GoodComponent extends React.Component {
                     {
                         cart.length
                             ? <table>
-                                <tr>
-                                    <th>№ п/п</th>
-                                    <th>Наименование</th>
-                                    <th>Параметры</th>
-                                    <th>Количество</th>
-                                    <th>Цена за 1 ед.</th>
-                                    <th>Общая цена</th>
-                                </tr>
-                                {cart.map((item) =>
+                                <tbody>
                                     <tr>
                                         <th>№ п/п</th>
-                                        <th>{item.name}</th>
-                                        <th>{item.color},{item.size}</th>
-                                        <th>{item.count}</th>
-                                        <th>{item.cost}</th>
-                                        <th>{item.cost * item.count}</th>
+                                        <th>Наименование</th>
+                                        <th>Характеристики</th>
+                                        <th>Количество</th>
+                                        <th>Цена за 1 ед.</th>
+                                        <th>Общая цена</th>
                                     </tr>
-                                )}
+                                    {cart.map((item,index) =>
+                                        <tr>
+                                            <th>{index+1}</th>
+                                            <th>{item.name}</th>
+                                            <th>{item.color},{item.size}</th>
+                                            <th>{item.count}</th>
+                                            <th>{item.cost}</th>
+                                            <th>{item.cost * item.count}</th>
+                                        </tr>
+                                    )}
+                                </tbody>
                             </table>
                             : <div className="">Нет товара</div>
                     }

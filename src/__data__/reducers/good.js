@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 import { TYPES } from '../actions-types'
-
 
 const initialState = {
   cart: [],
@@ -18,15 +16,15 @@ export const good = (state = initialState, action) => {
     count: 0
   }
   const isGoods = addedGoods.filter((item) => item.id === action.id)
-  if (!isGoods.length) {
+  if(!isGoods.length){
     addedGoods.push(newGood)
   }
-
+  
   addedGoods.map((item, index) => {
     if (item.id === undefined) {
       addedGoods.splice(index, 1)
     }
-    console.log('item', item)
+
     if (item.id === action.id) {
       item.count++
     }
@@ -42,8 +40,8 @@ export const good = (state = initialState, action) => {
       return {
         cart: initialState.cart
       }
-    default:
-      return state
+        default:
+          return state
   }
 =======
 import {
