@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Header, Footer, Breadcrumbs } from '../../components'
+import { Header, Footer} from '../../components'
 
 import style from './style.scss'
 
@@ -9,7 +9,6 @@ export class Page404 extends React.Component {
         return (
             <>
                 <Header />
-                <Breadcrumbs />
                 <div id="error-page">
                     <div className="content">
                         <h1 data-text="404">404</h1>

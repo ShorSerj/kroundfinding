@@ -8,10 +8,6 @@ import style from './style.scss'
 export const Footer = (props) => {
 
     return (<div className="footer">
-        <Logo
-            color="white"
-            size={22}
-        />
         <ul className="footer__nav">
             <li><a href="#" className="footer__nav_link">Каталог</a></li>
             <li><a href="#" className="footer__nav_link">Доставка</a></li>

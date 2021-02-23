@@ -4,26 +4,12 @@ import PropTypes from 'prop-types'
 
 import "./style.scss";
 
-export const Logo = (props) => {
-    const url = window.location.pathname
+export const Logo = () => {
 
     return (
-        <div className="logo">
-            {
-                url === '/'
-                    ? <span className={`logo__${props.color}`}>ВелоСпортАс</span>
-                    : <a className={`logo__${props.color}`} href="/">ВелоСпортАс</a>
-            }
-        </div>
+        <a className="logo">
+            <img src="../src/assets/images/Logo.png"/>
+        </a>
     )
 }
 
-Logo.propTypes = {
-    color: PropTypes.string,
-    size: PropTypes.number
-}
-
-Logo.defaultProps = {
-    color: 'black',
-    size: '18'
-};

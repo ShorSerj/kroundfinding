@@ -1,7 +1,0 @@
-
-this.setState({
-   data: wqe, () => {
-        
-   }
-})
-

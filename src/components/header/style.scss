@@ -1,43 +1,53 @@
 @import '../../styles/variables.scss';
 
 .header {
-  background-color: $basic-white;
+  background: rgba(56, 56, 56, 0.35);
+  font-family: 'Oswald';
+  font-weight: 300;
+  font-size: 18px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 67px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 24px;
-  padding-right: 24px;
+  display: flex;
+  flex-direction: row;
+  padding: 20px 24px 16px 10px;
+  letter-spacing: 1px;
+  z-index: 1;
+
 
   @media screen and (max-width: $table-width) {
     padding-left: 16px;
     padding-right: 16px;
     grid-template-columns: 1fr;
   }
-  
-  &__addlinks {
-    display: grid;
-    grid-auto-flow: column;
-    align-content: center;
-    justify-content: flex-end;
-    padding-right: 35px;
 
-    &_cart {
-      background: url(/img/cart.svg) no-repeat;
-      width: 23px;
-      height: 20px; 
-      
-      &:hover {
-        cursor: pointer;
-      }
-    }
+  &__links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(5em, max-content));
+    grid-gap: 20px;
+    padding: 0 40px;
+    align-items: center;
+
   }
 
-  &__logo {
+  &__progects {
     display: grid;
-    justify-content: center;
-    z-index: 1;
+    grid-template-columns: repeat(2, minmax(5em, max-content));
+    grid-gap: 20px;
+    padding: 0 50px;
+    align-items: center;
+
+  }
+
+  &__user {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(5em, max-content));
+    grid-gap: 20px;
+    align-items: center;
+    justify-content: end;
+    width: 400px;
   }
 
   &__menu {
@@ -48,5 +58,4 @@
       left: 0;
     }
   }
-
 }
