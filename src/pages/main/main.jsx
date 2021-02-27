@@ -14,7 +14,7 @@ export const Main = (props) => {
         <section className="main-window">
           <div className="background-video">
             <video width="100%" height="auto" preload="auto" autoPlay="autoplay" muted="muted"
-              loop="loop" poster="bg/daisy-stock-poster.jpg">
+              loop="loop" poster="">
               <source src="../src/assets/video/main-back.mp4" type="video/mp4"></source>
               {/* <source src="bg/daisy-stock-webm-video.webm" type="video/webm"></source> */}
             </video>
@@ -29,9 +29,12 @@ export const Main = (props) => {
           </div>
           <div className="main__choose">
             <div className="main__video">
-              <img src="../src/assets/video/start.gif" alt="" width="650" height="185" />
+              <img src="../src/assets/video/start.gif" alt="" width="700" height="192" />
+              <div className="main__video-gradient"></div>
             </div>
-            <div className="main__button">
+            <div className="main__button-container">
+              <div className="main__button"></div>
+              <span>Создать проект</span>
             </div>
           </div>
         </section>
